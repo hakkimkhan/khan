@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hi</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; overflow: hidden; background: black; font-family: Arial, sans-serif; }
+    canvas { display: block; }
+    #next { position: absolute; bottom: 50px; left: 50%; transform: translateX(-50%); background: white; padding: 10px 20px; border: none; font-size: 16px; cursor: pointer; z-index: 10; }
+    .center-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: yellow;
+      font-size: 48px;
+      text-shadow: 0 0 10px yellow, 0 0 20px yellow, 0 0 30px yellow;
+      z-index: 5;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="starCanvas"></canvas>
+  <div class="center-text">Hi Dhivija</div>
+  <button id="next" onclick="location.href='password.html'">Next</button>
+  <script>
+    const canvas = document.getElementById('starCanvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    let stars = [];
+    for (let i = 0; i < 200; i++) {
+      stars.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        r: Math.random() * 1.5,
+        d: Math.random() * 1
+      });
+    }
+
+    function drawStars() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = 'white';
+      ctx.shadowBlur = 5;
+      ctx.shadowColor = 'white';
+      for (let s of stars) {
+        ctx.beginPath();
+        ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+
+    function animate() {
+      for (let s of stars) {
+        s.r += 0.02 * (Math.random() > 0.5 ? 1 : -1);
+        if (s.r < 0.5) s.r = 0.5;
+        if (s.r > 1.5) s.r = 1.5;
+      }
+      drawStars();
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+  </script>
+  <audio autoplay loop>
+    <source src="hk.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+</body>
+</html>

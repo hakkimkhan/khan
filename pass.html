@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Floating Boat & Falling Stars</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      margin: 0;
+      background-color: black;
+      color: white;
+      font-family: 'Poppins', sans-serif;
+      overflow: hidden;
+    }
+
+    /* Falling stars */
+    .star {
+      position: absolute;
+      top: -10px;
+      width: 2px;
+      height: 2px;
+      background: white;
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh);
+        opacity: 0;
+      }
+    }
+
+    /* Floating image in corner */
+    .floating-image {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      width: 150px;
+      animation: float 4s ease-in-out infinite;
+      z-index: 1;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-8px) rotate(2deg); }
+    }
+
+    /* Glowing text */
+    .center-text {
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      font-size: 28px;
+      color: white;
+      text-shadow: 0 0 10px cyan, 0 0 20px blue;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Stars falling -->
+  <script>
+    // Create multiple falling stars
+    for (let i = 0; i < 100; i++) {
+      const star = document.createElement("div");
+      star.className = "star";
+      star.style.left = Math.random() * 100 + "vw";
+      star.style.animationDuration = (1 + Math.random() * 2) + "s";
+      star.style.animationDelay = Math.random() * 5 + "s";
+      document.body.appendChild(star);
+    }
+  </script>
+
+  <!-- Floating boat or image -->
+  <img src="boat.jpg" alt="Floating Image" class="floating-image">
+
+  <!-- Glowing sentence -->
+  <div class="center-text">
+    <p>Hi dhivija 🌟</p>
+    <p>In this page i say something about you</p>
+    <p>I really like your attitude and your behavior — you're friendly, genuine, and kind. But there's one thing I want to say: the way you talk so openly and nicely with everyone is a beautiful quality, but not everyone understands it the right way. Some people, especially boys, may take it differently and expect something more. I’m not judging you — this is just a suggestion or advice from my side. Be careful who you give hope to, because not everyone thinks the same or has good intentions.</p>
+    <p>I’m sharing this with trust and care, so I hope you’ll keep it between us and not share it with anyone</p>
+  </div>
+
+</body>
+</html>

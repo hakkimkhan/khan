@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Starry Page with Image & Audio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Poppins', sans-serif;
+      color: white;
+      height: 100vh;
+    }
+
+    .stars {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      box-shadow: 
+        0px 0px 2px white,
+        100px 200px 1px white,
+        200px 100px 2px white,
+        300px 400px 1px white,
+        400px 300px 2px white,
+        500px 200px 1px white,
+        600px 100px 2px white,
+        700px 500px 1px white,
+        800px 300px 2px white;
+      animation: twinkle 2s infinite;
+      z-index: 0;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.8; }
+      50% { opacity: 0.3; }
+    }
+
+    .content {
+      z-index: 1;
+      text-align: center;
+    }
+
+    img {
+      width: 250px;
+      max-width: 90%;
+      border-radius: 10px;
+      box-shadow: 0 0 20px white;
+      margin-bottom: 20px;
+    }
+
+    audio {
+      margin-top: 20px;
+      width: 300px;
+    }
+  </style>
+</head>
+<body>
+  <div class="stars"></div>
+
+  <div class="content">
+    <img src="ma.jpg" alt="Your Image">
+    <audio controls>
+      <source src="bird.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <p>Mathura — the sacred land where every street echoes the footsteps of Lord Krishna — is not just a city, but a miracle of faith, where divinity breathes in the air and every corner whispers timeless stories of love, devotion, and destiny.</p>
+    <p>You said you love Mathura. So I searched about it. And honestly, what a beautiful place it is. The temples, the stories, the calmness — everything feels magical. Now I understand why you love it. It’s not just a city, it’s an emotion</p>
+  </div>
+</body>
+</html>

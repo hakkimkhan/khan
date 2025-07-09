@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Floating Boat Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      background-color: black;
+      overflow: hidden;
+      font-family: 'Poppins', sans-serif;
+      color: white;
+    }
+
+    /* Stars */
+    .stars {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      box-shadow: 
+        0px 0px 2px white,
+        50px 80px 1px white,
+        120px 200px 2px white,
+        300px 150px 1px white,
+        450px 300px 2px white,
+        700px 100px 1px white;
+      animation: twinkle 2s infinite;
+      z-index: 0;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.8; }
+      50% { opacity: 0.3; }
+    }
+
+    /* Centered glowing message */
+    .message {
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 28px;
+      text-align: center;
+      color: white;
+      text-shadow: 0 0 10px yellow, 0 0 20px orange;
+      z-index: 1;
+    }
+
+    /* Boat floating in corner */
+    .boat {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      width: 150px;
+      animation: float 5s infinite ease-in-out;
+      z-index: 1;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-10px) rotate(3deg); }
+      100% { transform: translateY(0) rotate(-2deg); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="stars"></div>
+
+  <div class="message">
+    <p>This is just about you</p><br>
+    <p>your favorite colour : yellow<br>
+       your favorite place  : mathura<br>
+       your favorite food   : briyani<br>
+       your favorite actor  : vijay
+    </p>
+    <p>In these few days of talking to you, I understood one thing — you like a different kind of love story, one that’s not about drama or showing off, but about honesty, depth, and real feelings. And now, I know that. </p>
+  </div>
+
+  <img src="boat.jpg" alt="Floating Boat" class="boat">
+
+</body>
+</html>

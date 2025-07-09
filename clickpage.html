@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>fav</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 20px;
+    }
+    img {
+      width: 300px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px yellow;
+      margin-bottom: 20px;
+    }
+    
+  </style>
+</head>
+<body>
+  <img src="photo.jpg" alt="Special Memory">
+  <audio id="bg-music">
+    <source src="hi naana.mp3" type="audio/mpeg">
+    Your browser does not support audio.
+  </audio>
+
+  <!-- Control Button -->
+  <button class="audio-control" onclick="toggleAudio()">Play / Pause Music</button>
+
+  <!-- Script for stars and audio control -->
+  <script>
+    // Generate stars
+    const starsContainer = document.getElementById('stars');
+    for (let i = 0; i < 200; i++) {
+      const star = document.createElement('div');
+      star.className = 'star';
+      star.style.top = Math.random() * 100 + '%';
+      star.style.left = Math.random() * 100 + '%';
+      star.style.animationDuration = (Math.random() * 3 + 2) + 's';
+      starsContainer.appendChild(star);
+    }
+
+    // Toggle audio
+    const audio = document.getElementById('bg-music');
+    audio.volume = 0.2;
+    function toggleAudio() {
+      if (audio.paused) {
+        audio.play();
+      } else {
+        audio.pause();
+      }
+    }
+  </script>
+ 
+  <p>There’s something special about a love that waits patiently, speaks through silence, and shines without needing to be seen</p>
+
+</body>
+</html>
